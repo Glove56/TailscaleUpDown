@@ -1,0 +1,14 @@
+[Unit]
+Description=Tailscale MQTT Controller
+After=network.target
+
+[Service]
+Type=simple
+WorkingDirectory=/home/terry/TailscaleUpDown
+ExecStart=/home/terry/TailscaleUpDown/venv/bin/python /home/terry/TailscaleUpDown/tailscale_mqtt.py
+Restart=always
+RestartSec=5
+User=root
+
+[Install]
+WantedBy=multi-user.target
